@@ -68,14 +68,14 @@ func notify_exit(){
 func send_email(subject string, content string){
 
   m := gomail.NewMessage()
-  m.SetHeader("From", "noreply@savinetwork.ca")
-  m.SetHeader("To", "rajsimmanr@savinetwork.ca")
+  m.SetHeader("From", "xxxx")
+  m.SetHeader("To", "xxxx")
   m.SetHeader("Subject", subject)
   content = strings.Replace(content, "\n", "<br>",-1)
   //fmt.Println(content)
   m.SetBody("text/html", content)
 
-  d := gomail.NewDialer("smtp.gmail.com", 587, "noreply@savinetwork.ca", "WEe2>4PT")
+  d := gomail.NewDialer("smtp.gmail.com", 587, "xxxx", "xxxx")
 
   var err = d.DialAndSend(m)
   check(err)
