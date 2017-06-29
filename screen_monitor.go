@@ -16,12 +16,12 @@ import (
 const CURR_TMP_FILE = "/tmp/curr_sessions.log"
 const PAST_TMP_FILE = "/tmp/past_sessions.log"
 const LOG_FILE = "/tmp/screen_monitor_logs"
-const SCRIPT = "/home/perplexednoob/Documents/go/src/screen_monitor/get_procs.sh"
+const SCRIPT = "/home/xxx/xxx/go/src/screen_monitor/get_procs.sh"
 const SCRIPT_ARG = "get_procs"
 
-const FROM_EMAIL = "noreply@savinetwork.ca"
-const TO_EMAIL = "rajsimmanr@savinetwork.ca"
-const PWD = "WEe2>4PT"
+const FROM_EMAIL = "xxx"
+const TO_EMAIL = "xxx"
+const PWD = "xxx"
 
 // Author: Rajsimman Ravi
 // Any questions, contact: rajsimmanr@savinetwork.ca
