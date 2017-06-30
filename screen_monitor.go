@@ -21,9 +21,9 @@ const SCRIPT = "/home/xxx/go/src/screen_monitor/get_procs.sh"
 const SCRIPT_ARG = "get_procs"
 const LOG_FILE_SIZE = 2000000 // 2MB
 
-const FROM_EMAIL = "xxx@xxx"
-const TO_EMAIL = "xxx@xxx"
-const PWD = "xxx"
+const FROM_EMAIL = "xxx@xx"
+const TO_EMAIL = "xx@xx"
+const PWD = "xx"
 
 // Author: Rajsimman Ravi
 // Any questions, contact: rajsimmanr@savinetwork.ca
@@ -62,8 +62,7 @@ func check_log_size(){
     check(err)
 
     f_size := fi.Size() 
-
-    if f_size > 13167 {
+    if f_size > LOG_FILE_SIZE {
     
         err := os.Remove(LOG_FILE)
         check(err)
