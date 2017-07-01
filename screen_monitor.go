@@ -34,7 +34,6 @@ const PWD = "xx"
 // Function to check for errors. Copied from Golang example
 func check(e error) {
 	if e != nil {
-		notify_user("exited")
 		log_entry(e.Error())
 		panic(e)
 	}
@@ -93,7 +92,6 @@ func exec_cmd(comd string ) string {
 	err := cmd.Run()
     if err != nil {
         log_entry(fmt.Sprint(err) + ": " + stderr.String())
-        check(err)
     }
 
 	return out.String()
