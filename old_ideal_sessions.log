@@ -1,0 +1,63 @@
+SCREEN -d -m -S stack -t shell -s /bin/bash
+ \_ /bin/bash
+ \_ /bin/bash
+ |   \_ /bin/bash /opt/stack/neo4j-graphdb/bin/neo4j console
+ |       \_ /usr/bin/java -cp /opt/stack/neo4j-graphdb/lib/concurrentlinkedhashmap-lru-1.3.1.jar:/opt/stack/neo4j-graphdb/lib/geronimo-jta_1.1_spec-1.1.1.jar:/opt/stack/neo4j-graphdb/lib/lucene-core-3.6.2.jar:/opt/stack/neo4j-graphdb/lib/neo4j-cypher-1.9.jar:/opt/stack/neo4j-graphdb/lib/neo4j-graph-algo-1.9.jar:/opt/stack/neo4j-graphdb/lib/neo4j-graph-matching-1.9.jar:/opt/stack/neo4j-graphdb/lib/neo4j-jmx-1.9.jar:/opt/stack/neo4j-graphdb/lib/neo4j-kernel-1.9.jar:/opt/stack/neo4j-graphdb/lib/neo4j-lucene-index-1.9.jar:/opt/stack/neo4j-graphdb/lib/neo4j-shell-1.9.jar:/opt/stack/neo4j-graphdb/lib/neo4j-udc-1.9.jar:/opt/stack/neo4j-graphdb/lib/org.apache.servicemix.bundles.jline-0.9.94_1.jar:/opt/stack/neo4j-graphdb/lib/scala-library-2.10.0.jar:/opt/stack/neo4j-graphdb/lib/server-api-1.9.jar:/opt/stack/neo4j-graphdb/system/lib/asm-3.1.jar:/opt/stack/neo4j-graphdb/system/lib/bcprov-jdk16-140.jar:/opt/stack/neo4j-graphdb/system/lib/commons-beanutils-1.8.0.jar:/opt/stack/neo4j-graphdb/system/lib/commons-beanutils-core-1.8.0.jar:/opt/stack/neo4j-graphdb/system/lib/commons-collections-3.2.1.jar:/opt/stack/neo4j-graphdb/system/lib/commons-configuration-1.6.jar:/opt/stack/neo4j-graphdb/system/lib/commons-digester-1.8.1.jar:/opt/stack/neo4j-graphdb/system/lib/commons-io-1.4.jar:/opt/stack/neo4j-graphdb/system/lib/commons-lang-2.4.jar:/opt/stack/neo4j-graphdb/system/lib/commons-logging-1.1.1.jar:/opt/stack/neo4j-graphdb/system/lib/jackson-core-asl-1.9.7.jar:/opt/stack/neo4j-graphdb/system/lib/jackson-jaxrs-1.9.7.jar:/opt/stack/neo4j-graphdb/system/lib/jackson-mapper-asl-1.9.7.jar:/opt/stack/neo4j-graphdb/system/lib/janino-2.5.10.jar:/opt/stack/neo4j-graphdb/system/lib/jcl-over-slf4j-1.6.1.jar:/opt/stack/neo4j-graphdb/system/lib/jersey-core-1.9.jar:/opt/stack/neo4j-graphdb/system/lib/jersey-multipart-1.9.jar:/opt/stack/neo4j-graphdb/system/lib/jersey-server-1.9.jar:/opt/stack/neo4j-graphdb/system/lib/jetty-6.1.25.jar:/opt/stack/neo4j-graphdb/system/lib/jetty-util-6.1.25.jar:/opt/stack/neo4j-graphdb/system/lib/jsr311-api-1.1.2.r612.jar:/opt/stack/neo4j-graphdb/system/lib/logback-access-0.9.30.jar:/opt/stack/neo4j-graphdb/system/lib/logback-classic-0.9.30.jar:/opt/stack/neo4j-graphdb/system/lib/logback-core-0.9.30.jar:/opt/stack/neo4j-graphdb/system/lib/mimepull-1.6.jar:/opt/stack/neo4j-graphdb/system/lib/neo4j-cypher-plugin-1.9.jar:/opt/stack/neo4j-graphdb/system/lib/neo4j-server-1.9.jar:/opt/stack/neo4j-graphdb/system/lib/neo4j-server-1.9-static-web.jar:/opt/stack/neo4j-graphdb/system/lib/rhino-1.7R3.jar:/opt/stack/neo4j-graphdb/system/lib/rrd4j-2.0.7.jar:/opt/stack/neo4j-graphdb/system/lib/servlet-api-2.5-20081211.jar:/opt/stack/neo4j-graphdb/system/lib/slf4j-api-1.6.2.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/antlr-2.7.7.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/asm-analysis-3.2.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/asm-commons-3.2.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/asm-tree-3.2.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/asm-util-3.2.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/blueprints-core-1.2.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/blueprints-neo4j-graph-1.2.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/gremlin-groovy-1.5.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/gremlin-java-1.5.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/groovy-1.8.5.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/jansi-1.5.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/jettison-1.3.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/neo4j-gremlin-plugin-1.9.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/pipes-1.0.jar:/opt/stack/neo4j-graphdb/plugins/gremlin1.5/stax-api-1.0.1.jar:/opt/stack/neo4j-graphdb/conf/ -server -XX:+DisableExplicitGC -XX:+CMSClassUnloadingEnabled -Dlog4j.configuration=file:conf/log4j.properties -Dorg.neo4j.server.properties=/opt/stack/neo4j-graphdb/conf/neo4j-server.properties -Djava.util.logging.config.file=/opt/stack/neo4j-graphdb/conf/logging.properties -Dneo4j.home=/opt/stack/neo4j-graphdb -Dneo4j.instance=/opt/stack/neo4j-graphdb -Dfile.encoding=UTF-8 org.neo4j.server.Bootstrapper
+ \_ /bin/bash
+ |   \_ python /opt/stack/whale/bin/whale-init --config-file /etc/whale/whale.conf
+ \_ /bin/bash
+ |   \_ python /opt/stack/whale/bin/whale-server --config-file /etc/whale/whale.conf
+ \_ /bin/bash
+ |   \_ python /opt/stack/janus/bin/janus-init --config-file /etc/janus/janus.conf
+ \_ /bin/bash
+ |   \_ python /opt/stack/ryu/bin/ryu-manager --flagfile /etc/ryu/ryu.conf
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-api --config-dir=/etc/nova
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/glance-api --config-file=/etc/glance/glance-api.conf
+ |       \_ /usr/bin/python /usr/local/bin/glance-api --config-file=/etc/glance/glance-api.conf
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/janus/janus.ini
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/neutron-dhcp-agent --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/dhcp_agent.ini
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/neutron-l3-agent --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/l3_agent.ini
+ \_ /bin/bash
+ |   \_ python /opt/stack/quantum/neutron/plugins/janus/agent/janus_neutron_agent.py --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/janus/janus.ini
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/neutron-metadata-agent --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/metadata_agent.ini
+ \_ /bin/bash
+ |   \_ sg libvirtd nova-conductor --config-dir=/etc/nova
+ |       \_ /usr/bin/python /usr/local/bin/nova-conductor
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/nova-cert --config-dir=/etc/nova
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/nova-scheduler --config-dir=/etc/nova
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/nova-novncproxy --config-file /etc/nova/nova.conf --web /opt/stack/noVNC
+ |       \_ [nova-novncproxy] <defunct>
+ |       \_ [nova-novncproxy] <defunct>
+ |       \_ /usr/bin/python /usr/local/bin/nova-novncproxy --config-file /etc/nova/nova.conf --web /opt/stack/noVNC
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/nova-xvpvncproxy --config-file /etc/nova/nova.conf
+ \_ /bin/bash
+ |   \_ /usr/bin/python /usr/local/bin/nova-consoleauth --config-dir=/etc/nova
+ \_ /bin/bash
+ |   \_ python /opt/stack/cinder/bin/cinder-api --config-file /etc/cinder/cinder.conf
+ \_ /bin/bash
+ |   \_ python /opt/stack/cinder/bin/cinder-scheduler --config-file /etc/cinder/cinder.conf
+ \_ /bin/bash
+     \_ sudo ip netns exec qrouter-5b8eed7c-1183-4f74-ba26-6965954bde23 bin/arp_handler.py
+         \_ python bin/arp_handler.py
+SCREEN -S get-eamil-api
+ \_ /bin/bash
+     \_ python get_email.py
