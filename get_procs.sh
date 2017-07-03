@@ -10,10 +10,21 @@ function get_procs {
     if [ -n "$proc_id_list" ]; then
         for pid in "${proc_id_list[@]}"
         do
-            # Ignoring sessions that have "timeout" because they change all the time (created/exited)
-            ps --no-header -o pid,cmd --forest $(ps -e --no-header -o pid,ppid|awk -vp="${pid}" 'function r(s){print s;s=a[s];while(s){sub(",","",s);t=s;sub(",.*","",t);sub("[0-9]+","",s);r(t)}}{a[$2]=a[$2]","$1}END{r(p)}') | grep -v "timeout"
+            list_offspring $pid
         done
     fi
+}
+
+function list_offspring {
+  tp=`pgrep -P $1`
+  for i in $tp; do
+    if [ ! -z $i ]; then
+      tp_2=`pgrep -P $i`
+      if [ ! -z "$tp_2" ]; then
+        ps -p $tp_2 --no-header -o cmd
+      fi;
+    fi;
+  done
 }
 
 if [[ "$1" = "get_procs" ]]; then 
