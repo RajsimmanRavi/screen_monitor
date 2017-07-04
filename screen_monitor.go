@@ -34,6 +34,7 @@ const PWD = "xx"
 // Function to check for errors. Copied from Golang example
 func check(e error) {
 	if e != nil {
+        notify_user("Exited")
 		log_entry(e.Error())
 		panic(e)
 	}
@@ -168,7 +169,7 @@ func main() {
 
 	go func() {
 		<-c
-		notify_user("exited")
+		notify_user("Interrupted")
 		log_entry("Interrupted")
 		os.Exit(1)
 	}()
